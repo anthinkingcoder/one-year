@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<meta name="viewport" content="initial-scale=0.5,user-scalable=no">-->
+    <!--<meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, user-scalable=yes">-->
+    <!--<script src="/script/common/flexible.js"></script>-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">-->
+    <!--<script src="/script/common/flexible2.0.js"></script>-->
+    <meta content="modeName=750-12" name="grid"/>
+    <script src="/script/common/grid.js"></script>
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .flex {
+        display: flex;
+        flex-flow:row nowrap;
+    }
+
+    .grid {
+        box-sizing: content-box;
+        padding-left: 0.32rem;
+        padding-right: 0.32rem;
+        margin-left: -0.24rem;
+    }
+
+    .grid:before, .grid:after {
+        content: " ";
+        display: table;
+    }
+
+    .grid:after {
+        clear: both;
+    }
+
+    .grid [class^="col-"] {
+        margin-left: 0.24rem;
+        float: left;
+    }
+
+    .grid .col-1 {
+        width: 0.56rem;
+    }
+
+    .grid .col-2 {
+        width: 1.36rem;
+    }
+
+    .grid .col-3 {
+        width: 2.16rem;
+    }
+
+    .grid .col-4 {
+        width: 2.96rem;
+    }
+
+    .grid .col-5 {
+        width: 3.7600000000000002rem;
+    }
+
+    .grid .col-6 {
+        width: 4.5600000000000005rem;
+    }
+
+    .grid .col-7 {
+        width: 5.36rem;
+    }
+
+    .grid .col-8 {
+        width: 6.16rem;
+    }
+
+    .grid .col-9 {
+        width: 6.960000000000001rem;
+    }
+
+    .grid .col-10 {
+        width: 7.760000000000001rem;
+    }
+
+    .grid .col-11 {
+        width: 8.56rem;
+    }
+
+    .grid .col-12 {
+        width: 9.36rem;
+    }
+</style>
+<body>
+<div class="grid">
+    <div class="col-4">1</div>
+    <div class="col-4">2</div>
+    <div class="col-4">3</div>
+</div>
+
+<div class="grid">
+    <div class="col-6"></div>
+    <div class="col-6"></div>
+</div>
+
+<div class="grid">
+    <div class="col-3"></div>
+    <div class="col-4"></div>
+    <div class="col-5"></div>
+</div>
+</body>
+</html>
+
+<script>
+    console.info(window.devicePixelRatio);
+    console.info(document.documentElement.clientWidth);
+    console.info(window.innerWidth);
+
+    console.info(screen.width);
+</script>

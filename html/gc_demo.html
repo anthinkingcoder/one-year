@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手势密码demo</title>
+    <script src="../script/common/gc.js"></script>
+    <script src="../script/common/jquery-3.3.1.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,maximum-scale=1.0"/>
+    <script src="../script/common/global.js"></script>
+</head>
+<body style="overflow: hidden">
+    <div class="gc" id="gc" style="overflow: hidden">
+        <!--<table class="gc" id="gc">-->
+            <!--<tr class="gc-row">-->
+                <!--<td class="gc-item gc-item-active ">-->
+                <!--</td>-->
+                <!--<td class="gc-item">-->
+                <!--</td>-->
+                <!--<td class="gc-item">-->
+                <!--</td>-->
+            <!--</tr>-->
+
+            <!--<tr class="gc-row">-->
+                <!--<td class="gc-item gc-item-active">-->
+                <!--</td>-->
+                <!--<td class="gc-item">-->
+                <!--</td>-->
+                <!--<td class="gc-item">-->
+                <!--</td>-->
+            <!--</tr>-->
+
+            <!--<tr class="gc-row">-->
+                <!--<td class="gc-item gc-item-active ">-->
+                <!--</td>-->
+                <!--<td class="gc-item">-->
+                <!--</td>-->
+                <!--<td class="gc-item">-->
+                <!--</td>-->
+            <!--</tr>-->
+        <!--</table>-->
+    </div>
+</body>
+<script>
+    var gc = new GestureCipher('#gc', {
+        mode: GestureCipherMode.SETTING
+    });
+
+    gc.setMode(GestureCipherMode.VALID, '0125');
+    gc.oncommon = function (status, message) {
+        console.info(status, message);
+
+    };
+    gc.onvalid = function (status, message) {
+        console.info(status, message);
+
+    };
+    gc.onsetting = function (status, message,secret) {
+        console.info(status, message);
+        if (status === GestureCipherSettingModeStatus.SETTING_SUCCESS) {
+            console.info(secret);
+        }
+    }
+</script>
+</html>
